@@ -8,11 +8,12 @@ public class PlayerController : MonoBehaviour {
 
 	private Rigidbody rb;
 
+	//gets the rigidbody
 	void Start ()
 	{
 		rb = GetComponent<Rigidbody>();
 	}
-
+	//Movement control
 	void FixedUpdate ()
 	{
 		float moveHorizontal = Input.GetAxis ("Horizontal");
@@ -22,5 +23,7 @@ public class PlayerController : MonoBehaviour {
 
 		Vector3 movement = new Vector3 (moveHorizontal, 0.0f, moveVertical);
 		rb.AddForce (movement * speed);
+		//Vector3 rotation = new Vector3 (0, lookLeft, 0);
+		//rb.AddTorque (rotation * sensitivity);
 	}
 }
